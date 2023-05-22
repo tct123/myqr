@@ -61,3 +61,4 @@ var/
 # Briefcase log files
 logs/
 src/myqr/resources/signal-2023-05-22-214619_002.png
+src/myqr/resources/image.png
