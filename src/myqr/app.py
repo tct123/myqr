@@ -4,6 +4,9 @@ A Simple QR App.
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
+import pyqrcode
+from pyzbar.pyzbar import decode
+from PIL import Image
 
 
 class MyQR(toga.App):
@@ -21,6 +24,10 @@ class MyQR(toga.App):
         self.main_window = toga.MainWindow(title=self.formal_name)
         self.main_window.content = main_box
         self.main_window.show()
+    def createqr():
+        pass
+    def readqr():
+        data
 
 
 def main():
