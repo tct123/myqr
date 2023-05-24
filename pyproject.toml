@@ -24,7 +24,7 @@ test_sources = [
 requires = [
     "pyqrcode==1.2.1",
     "pyzbar==0.1.9",
-    "pillow==9.5.0"
+    "pillow==9.5.0",
     "pypng==0.20220715.0"
 ]
 test_requires = [
