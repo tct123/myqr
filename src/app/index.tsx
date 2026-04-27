@@ -44,7 +44,12 @@ export default function Index() {
                 }, {
                   text: "open",
                   onPress: () => {
-                    Linking.openURL(data.data);
+                    try {
+                      Linking.openURL(data.data)
+                    } catch {
+                      console.log("")
+                    }
+
                     setScanned(false)
                   }
                 }])
