@@ -1,8 +1,12 @@
 import { CameraView, useCameraPermissions } from "expo-camera";
-import { Button, StyleSheet, Text, View } from "react-native";
+import * as Haptics from 'expo-haptics';
+import * as Linking from 'expo-linking';
+import { useState } from "react";
+import { Alert, Button, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   const [permission, requestPermission] = useCameraPermissions();
+  const [scanned, setScanned] = useState<boolean>(false)
   if (!permission) {
     // Camera permissions are still loading.
     return <View />;
@@ -23,7 +27,30 @@ export default function Index() {
       barcodeScannerSettings={{
         barcodeTypes: ["qr"]
       }}
-      onBarcodeScanned={() => { }}
+      onBarcodeScanned={
+        (data) => {
+          if (!scanned) {
+            Haptics.impactAsync();
+            setScanned(true);
+            Alert.alert(
+              "Result",
+              data.data,
+              [
+                {
+                  text: "Exit",
+                  onPress: () => {
+                    setScanned(false)
+                  }
+                }, {
+                  text: "open",
+                  onPress: () => {
+                    Linking.openURL(data.data);
+                    setScanned(false)
+                  }
+                }])
+          }
+        }
+      }
     />
   );
 }
