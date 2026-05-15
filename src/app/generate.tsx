@@ -1,10 +1,14 @@
-import { StyleSheet, View } from "react-native";
-
+import { ScrollView, StyleSheet, View } from "react-native";
+import QRCode from "react-native-qrcode-svg";
 export default function Index() {
     return (
-        <View
+        <ScrollView
             style={styles.container}
-        ></View>
+        >
+            <View>
+                <QRCode value="http://awesome.link.qr" />
+            </View>
+        </ScrollView>
     );
 }
 
