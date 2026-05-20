@@ -1,7 +1,7 @@
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { useTheme } from '@react-navigation/native';
 import { Icon, Label, VectorIcon } from 'expo-router';
-import { NativeTabs, } from 'expo-router/unstable-native-tabs';
+import { NativeTabs } from 'expo-router/unstable-native-tabs';
 
 
 export default function RootLayout() {
