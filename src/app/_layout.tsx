@@ -12,11 +12,9 @@ export default function RootLayout() {
     <ThemeProvider value={colorTheme === "dark" ? DarkTheme : DefaultTheme}>
       <NativeTabs
         tintColor={theme.colors.primary}
-        // backgroundColor={theme.colors.background}
         blurEffect='systemChromeMaterial'
-      // iconColor={theme.colors.primary}
       >
-        <NativeTabs.Trigger name="index">
+        <NativeTabs.Trigger name="index" >
           <Label>Scan</Label>
           <Icon src={<VectorIcon
             family={MaterialCommunityIcons}
@@ -24,7 +22,7 @@ export default function RootLayout() {
           />}>
           </Icon>
         </NativeTabs.Trigger>
-        <NativeTabs.Trigger name="generate">
+        <NativeTabs.Trigger name="generate" contentStyle={{ backgroundColor: "brown" }}>
           <Label>Generate</Label>
           <Icon src={
             <VectorIcon
@@ -34,7 +32,7 @@ export default function RootLayout() {
           }>
           </Icon>
         </NativeTabs.Trigger>
-        <NativeTabs.Trigger name="course" role='search'>
+        <NativeTabs.Trigger name="course" role='search' contentStyle={{ backgroundColor: "red" }}>
           <Label>Course</Label>
           <Icon src={
             <VectorIcon

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
@@ -23,12 +23,12 @@ export default function Index() {
                         size={200}
                         value={link ? link : "http://awesome.link.qr"}
                     />
-                    <Text style={{ color: "red" }}>Hello</Text>
                     <TextInput
                         style={styles.input}
                         value={link}
                         placeholder="URL"
                         onChangeText={changelink}
+                        inputMode="text"
                     />
                     <Button title="Export" />
                 </View>
@@ -39,11 +39,11 @@ export default function Index() {
 
 const styles = StyleSheet.create({
     scrollview: {
-        flex: 1
+        flex: 1,
+        alignContent: "center",
     },
     view: {
         flex: 1,
-        backgroundColor: "white",
         justifyContent: "center",
         alignContent: "center",
         alignItems: "center",
