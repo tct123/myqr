@@ -3,7 +3,11 @@ import QRCode from "react-native-qrcode-svg";
 export default function Index() {
     return (
         <ScrollView
-            style={styles.container}
+            style={styles.scrollview}
+            contentContainerStyle={{
+                alignItems: "center",
+                justifyContent: "center",
+            }}
         >
             <View>
                 <QRCode value="http://awesome.link.qr" />
@@ -13,9 +17,7 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    scrollview: {
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
     },
 });
