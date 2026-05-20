@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, Text } from "react-native";
 
 export default function Index() {
     const data = [{ key: 1, message: "h" }];
+    console.log(data)
     return (
         <ScrollView
             style={styles.scrollview}
