@@ -11,6 +11,7 @@ export default function Index() {
                 justifyContent: "center",
             }}
         >
+
         </ScrollView>
     );
 }
