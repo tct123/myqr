@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, Text } from "react-native";
 
 
 export default function Index() {
@@ -11,7 +11,32 @@ export default function Index() {
                 justifyContent: "center",
             }}
         >
-
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
+            <Text style={styles.text}>1</Text>
         </ScrollView>
     );
 }
@@ -20,4 +45,8 @@ const styles = StyleSheet.create({
     scrollview: {
         flex: 1,
     },
+    text: {
+        color: "white",
+        fontSize: 20
+    }
 });

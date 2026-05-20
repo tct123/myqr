@@ -1,8 +1,10 @@
-import { ScrollView, StyleSheet, View } from "react-native";
+import { useState } from "react";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 
 
 export default function Index() {
+    const [link, setLink] = useState("http://awesome.link.qr");
     return (
         <ScrollView
             style={styles.scrollview}
@@ -11,8 +13,9 @@ export default function Index() {
                 justifyContent: "center",
             }}
         >
-            <View>
-                <QRCode value="http://awesome.link.qr" />
+            <View style={styles.view}>
+                <QRCode size={200} value={link} />
+                <Text>Hello</Text>
             </View>
         </ScrollView>
     );
@@ -20,6 +23,10 @@ export default function Index() {
 
 const styles = StyleSheet.create({
     scrollview: {
-        flex: 1,
+        flex: 1
     },
+    view: {
+        flex: 1,
+        color: "red"
+    }
 });
