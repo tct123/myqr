@@ -2,12 +2,11 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { useTheme } from '@react-navigation/native';
 import { Icon, Label, VectorIcon } from 'expo-router';
 import { NativeTabs, } from 'expo-router/unstable-native-tabs';
-import { useColorScheme } from 'react-native';
 
 
 export default function RootLayout() {
   const theme = useTheme();
-  const colorTheme = useColorScheme();
+  // const colorTheme = useColorScheme();
   return (
     //<ThemeProvider value={colorTheme === "dark" ? DarkTheme : DefaultTheme}>
     <NativeTabs
