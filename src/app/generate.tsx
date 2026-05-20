@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
@@ -10,7 +10,7 @@ export default function Index() {
         setLink(value)
     }
     return (
-        <SafeAreaProvider >
+        <SafeAreaProvider>
             <ScrollView
                 style={styles.scrollview}
                 contentContainerStyle={{
@@ -21,15 +21,16 @@ export default function Index() {
                 <View style={styles.view}>
                     <QRCode
                         size={200}
-                        value={link}
+                        value={link ? link : "http://awesome.link.qr"}
                     />
                     <Text style={{ color: "red" }}>Hello</Text>
                     <TextInput
                         style={styles.input}
-                        value={"http://awesome.link.qr"}
+                        value={link}
                         placeholder="URL"
                         onChangeText={changelink}
                     />
+                    <Button title="Export" />
                 </View>
             </ScrollView>
         </SafeAreaProvider>
