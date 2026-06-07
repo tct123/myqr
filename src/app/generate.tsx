@@ -1,39 +1,38 @@
+import { Button } from "@expo/ui";
 import { useState } from "react";
-import { Button, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { ScrollView, StyleSheet, TextInput, View } from "react-native";
 import QRCode from "react-native-qrcode-svg";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Index() {
+    const insets = useSafeAreaInsets();
     const [link, setLink] = useState<string>("http://awesome.link.qr");
     function changelink(value: string) {
         setLink(value)
     }
     return (
-        <SafeAreaProvider>
-            <ScrollView
-                style={styles.scrollview}
-                contentContainerStyle={{
-                    alignItems: "center",
-                    justifyContent: "center",
-                }}
-            >
-                <View style={styles.view}>
-                    <QRCode
-                        size={200}
-                        value={link ? link : "http://awesome.link.qr"}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        value={link}
-                        placeholder="URL"
-                        onChangeText={changelink}
-                        inputMode="text"
-                    />
-                    <Button title="Export" />
-                </View>
-            </ScrollView>
-        </SafeAreaProvider>
+        <ScrollView
+            style={[styles.scrollview, { paddingTop: insets.top }]}
+            contentContainerStyle={{
+                alignItems: "center",
+                justifyContent: "center",
+            }}
+        >
+            <View style={styles.view}>
+                <QRCode
+                    size={200}
+                    value={link ? link : "http://awesome.link.qr"}
+                />
+                <TextInput
+                    style={styles.input}
+                    value={link}
+                    placeholder="URL"
+                    onChangeText={changelink}
+                    inputMode="text"
+                />
+                <Button label="Export" />
+            </View>
+        </ScrollView>
     );
 }
 

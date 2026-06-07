@@ -1,10 +1,10 @@
+
 import { CameraView, useCameraPermissions } from "expo-camera";
 import * as Haptics from 'expo-haptics';
 import * as Linking from 'expo-linking';
 import { useTheme } from "expo-router";
 import { useState } from "react";
 import { Alert, Button, StyleSheet, Text, View } from "react-native";
-
 export default function Index() {
   const theme = useTheme();
   const [permission, requestPermission] = useCameraPermissions();

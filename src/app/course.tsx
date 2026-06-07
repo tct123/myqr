@@ -1,12 +1,14 @@
 import { ScrollView, StyleSheet, Text } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 
 export default function Index() {
     const data = [{ key: 1, message: "h" }];
+    const insets = useSafeAreaInsets();
     console.log(data)
     return (
         <ScrollView
-            style={styles.scrollview}
+            style={[styles.scrollview, { paddingTop: insets.top }]}
             contentContainerStyle={{
                 alignItems: "center",
                 justifyContent: "center",
