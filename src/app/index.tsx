@@ -17,7 +17,7 @@ export default function Index() {
     // Camera permissions are not granted yet.
     return (
       <View style={styles.container}>
-        <Text style={styles.message, { color: theme.colors.text }}>We need your permission to show the camera</Text>
+        <Text style={[styles.message, { color: theme.colors.text }]}>We need your permission to show the camera</Text>
         <Button onPress={requestPermission} title="Grant permission" />
       </View>
     );
