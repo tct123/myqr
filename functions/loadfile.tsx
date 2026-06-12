@@ -16,5 +16,13 @@ export default function LoadFile() {
             Alert.alert('Permission required', 'Permission to access the media library is required.');
             return;
         }
-    }
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ['images'],
+        });
+        console.log(result);
+        if (!result.canceled) {
+            setImage(result.assets[0].uri);
+        }
+        return image
+    };
 }
