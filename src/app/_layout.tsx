@@ -1,3 +1,4 @@
+import { MaterialDesignIcons } from "@react-native-vector-icons/material-design-icons/";
 import { DarkTheme, DefaultTheme, ThemeProvider, useTheme } from 'expo-router';
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import { useColorScheme } from 'react-native';
@@ -16,7 +17,7 @@ export default function RootLayout() {
           <NativeTabs.Trigger.Label>Scan</NativeTabs.Trigger.Label>
           <NativeTabs.Trigger.Icon src={
             <NativeTabs.Trigger.VectorIcon
-              family={MaterialCommunityIcons}
+              family={MaterialDesignIcons}
               name="qrcode"
             />
           }>
@@ -26,7 +27,7 @@ export default function RootLayout() {
           <NativeTabs.Trigger.Label>Generate</NativeTabs.Trigger.Label>
           <NativeTabs.Trigger.Icon src={
             <NativeTabs.Trigger.VectorIcon
-              family={MaterialCommunityIcons}
+              family={MaterialDesignIcons}
               name="qrcode-edit"
             />
           }>
@@ -36,7 +37,7 @@ export default function RootLayout() {
           <NativeTabs.Trigger.Label>Course</NativeTabs.Trigger.Label>
           <NativeTabs.Trigger.Icon src={
             <NativeTabs.Trigger.VectorIcon
-              family={MaterialCommunityIcons}
+              family={MaterialDesignIcons}
               name="tab-search"
             />
           }>
