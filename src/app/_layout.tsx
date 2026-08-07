@@ -1,4 +1,4 @@
-import { MaterialDesignIcons } from "@react-native-vector-icons/material-design-icons/";
+import { MaterialDesignIcons } from "@react-native-vector-icons/material-design-icons";
 import { DarkTheme, DefaultTheme, ThemeProvider, useTheme } from 'expo-router';
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import { useColorScheme } from 'react-native';
