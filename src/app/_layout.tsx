@@ -1,5 +1,5 @@
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import { DarkTheme, DefaultTheme, Icon, Label, ThemeProvider, useTheme, VectorIcon } from 'expo-router';
+import { DarkTheme, DefaultTheme, ThemeProvider, useTheme, VectorIcon } from 'expo-router';
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import { useColorScheme } from 'react-native';
 
@@ -14,32 +14,34 @@ export default function RootLayout() {
         blurEffect='systemChromeMaterial'
       >
         <NativeTabs.Trigger name="index" >
-          <Label>Scan</Label>
-          <Icon src={<VectorIcon
-            family={MaterialCommunityIcons}
-            name="qrcode"
-          />}>
-          </Icon>
+          <NativeTabs.Trigger.Label>Scan</NativeTabs.Trigger.Label>
+          <NativeTabs.Trigger.Icon src={
+            <VectorIcon
+              family={MaterialCommunityIcons}
+              name="qrcode"
+            />
+          }>
+          </NativeTabs.Trigger.Icon>
         </NativeTabs.Trigger>
         <NativeTabs.Trigger name="generate" contentStyle={{ backgroundColor: "brown" }}>
-          <Label>Generate</Label>
-          <Icon src={
+          <NativeTabs.Trigger.Label>Generate</NativeTabs.Trigger.Label>
+          <NativeTabs.Trigger.Icon src={
             <VectorIcon
               family={MaterialCommunityIcons}
               name="qrcode-edit"
             />
           }>
-          </Icon>
+          </NativeTabs.Trigger.Icon>
         </NativeTabs.Trigger>
         <NativeTabs.Trigger name="course" role='search' contentStyle={{ backgroundColor: "red" }}>
-          <Label>Course</Label>
-          <Icon src={
+          <NativeTabs.Trigger.Label>Course</NativeTabs.Trigger.Label>
+          <NativeTabs.Trigger.Icon src={
             <VectorIcon
               family={MaterialCommunityIcons}
               name="tab-search"
             />
           }>
-          </Icon>
+          </NativeTabs.Trigger.Icon>
         </NativeTabs.Trigger>
       </NativeTabs>
     </ThemeProvider>
