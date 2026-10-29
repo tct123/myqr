@@ -1,9 +1,10 @@
+import { Host } from "@expo/ui";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import * as Haptics from 'expo-haptics';
 import * as Linking from 'expo-linking';
 import { useTheme } from "expo-router";
 import { useState } from "react";
-import { Alert, Button, StyleSheet, Text, View } from "react-native";
+import { Alert, Button, StyleSheet, Text } from "react-native";
 
 export default function Index() {
   const theme = useTheme();
@@ -11,15 +12,15 @@ export default function Index() {
   const [scanned, setScanned] = useState<boolean>(false)
   if (!permission) {
     // Camera permissions are still loading.
-    return <View />;
+    return <Host />;
   }
   if (!permission.granted) {
     // Camera permissions are not granted yet.
     return (
-      <View style={styles.container}>
+      <Host style={styles.container}>
         <Text style={[styles.message, { color: theme.colors.text }]}>We need your permission to show the camera</Text>
         <Button onPress={requestPermission} title="Grant permission" />
-      </View>
+      </Host>
     );
   }
 

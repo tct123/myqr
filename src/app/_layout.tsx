@@ -1,5 +1,5 @@
 import { DarkTheme, DefaultTheme, ThemeProvider, useTheme } from 'expo-router';
-import { NativeTabs } from 'expo-router/unstable-native-tabs';
+import { NativeTabs } from 'expo-router/native-tabs';
 import { useColorScheme } from 'react-native';
 // import * as Symbol from "expo-symbols";
 // import { useEffect, useState } from 'react';
