@@ -33,17 +33,17 @@ export default function RootLayout() {
     <ThemeProvider value={colorTheme === "dark" ? DarkTheme : DefaultTheme}>
       <NativeTabs
         tintColor={theme.colors.primary}
-        blurEffect='systemChromeMaterial'
+        blurEffect='systemMaterial'
       >
         <NativeTabs.Trigger name="index" >
           <NativeTabs.Trigger.Label>Scan</NativeTabs.Trigger.Label>
           <NativeTabs.Trigger.Icon sf={"qrcode"} md={"qr_code"} />
         </NativeTabs.Trigger>
-        <NativeTabs.Trigger name="generate" contentStyle={{ backgroundColor: "brown" }}>
+        <NativeTabs.Trigger name="generate">
           <NativeTabs.Trigger.Label>Generate</NativeTabs.Trigger.Label>
           <NativeTabs.Trigger.Icon sf={"note"} md={"note"} />
         </NativeTabs.Trigger>
-        <NativeTabs.Trigger name="course" role='search' contentStyle={{ backgroundColor: "red" }}>
+        <NativeTabs.Trigger name="course" role='search' >
           <NativeTabs.Trigger.Label>Course</NativeTabs.Trigger.Label>
           <NativeTabs.Trigger.Icon sf={"loupe"} md={"search"} />
         </NativeTabs.Trigger>

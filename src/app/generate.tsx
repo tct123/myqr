@@ -1,12 +1,15 @@
-import { Button, Host, ScrollView } from "@expo/ui";
-import { useState } from "react";
-import { StyleSheet, TextInput } from "react-native";
+import { Button, Host, ScrollView, TextInput, TextInputRef } from "@expo/ui";
+import { useRef, useState } from "react";
+import { StyleSheet } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Index() {
     const insets = useSafeAreaInsets();
     const [link, setLink] = useState<string>("http://awesome.link.qr");
+    
+    const inputRef = useRef<TextInputRef>(null);
+
     function changelink(value: string) {
         setLink(value)
     }
@@ -19,23 +22,28 @@ export default function Index() {
             //    justifyContent: "center",
             //}}
             >
-                <Host style={styles.view}>
-                    <QRCode
-                        size={200}
-                        value={link ? link : "http://awesome.link.qr"}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        value={link}
-                        placeholder="URL"
-                        onChangeText={changelink}
-                        inputMode="text"
-                    />
-                    <Button label="Export" />
-                </Host>
+                <QRCode
+                    size={200}
+                    value={link ? link : "http://awesome.link.qr"}
+                />
+                <TextInput
+                ref={inputRef}
+                    //style={styles.input}
+                    style={{
+                        height: 40,
+                        borderWidth: 1,
+                        padding: 10,
+                        width: "90%"
+                    }}
+                    defaultValue="http://awesome.link.qr"
+                    placeholder="URL"
+                    onChangeText={value => changelink(value)}
+                    inputMode="text"
+                />
+                <Button label="Export" />
             </ScrollView>
         </Host>
-    );
+    );//styles.view for host 2
 }
 
 const styles = StyleSheet.create({
@@ -56,6 +64,5 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         width: "90%"
-
     }
 });
